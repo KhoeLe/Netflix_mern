@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const { readdirSync } = require("fs");
 const authRouter = require("./routes/auth");
 
 dotenv.config();
@@ -26,8 +27,15 @@ app.use("/" ,(req, res)=>{
   return res.status(200).json("Hello World")
 })
 
+// routes middleware
+// readdirSync("./routes").map((r) => app.use("/api/auth" ,authRouter, require("./routes/" + r)));
+
+
+
+
 app.listen(process.env.PORT, () => {
   console.log("BE server running ");
-});
- 
-  
+}); 
+   
+     
+   
