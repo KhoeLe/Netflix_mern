@@ -48,6 +48,7 @@ app.use((error, req, res, next) => {
   });
 
 
+  
 // routes middleware
 // readdirSync("./routes").map((r) => app.use("/api/auth" ,authRouter, require("./routes/" + r)));
 
